@@ -1,0 +1,28 @@
+<ion-content title="Payments">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <form ng-submit="doLogin()">
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">Credit Card Number</span>
+        <input type="password" ng-model="creditcard.number">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Expiration Month</span>
+        <input type="text" ng-model="creditCard.expmonth">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Expiration Year</span>
+        <input type="text" ng-model="creditCard.expyear">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Address</span>
+        <input type="text" ng-model="creditCard.address">
+      </label>
+      <label class="item">
+        <button class="button button-block button-positive" type="submit">Save</button>
+      </label>
+    </div>
+  </form>
+</ion-content>

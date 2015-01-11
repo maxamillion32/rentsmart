@@ -1,0 +1,26 @@
+<div class="modal">
+  <div class="card location-info">
+
+    <div class="item item-text-wrap center">
+      <img src="img/house1.jpg">
+      <p>Address: {{displayLoc.address}}, Description: {{displayLoc.description}}, Rating: {{displayLoc.rating}}</p>
+      <!--<p>Parking:</p>-->
+      <ul class="list">
+        <li ng-repeat="spot in displayLoc.parkingSpots track by $index">
+          <p>Type: {{spot.spaceType}}</p>
+          <p>Status: {{spot.status}}</p>
+          <p>Price: ${{spot.price}}</p>
+          <button class="button button-positive" ng-click="reserve(spot)">Reserve Spot</button>
+        </li>
+      </ul>
+    </div>
+    <div class="item item-divider center">
+      <div class="button-bar">
+        <a class="button button-block button-positive" ng-click="honkHorn()">Lockdown Car</a>
+        <a class="button button-block button-positive" ng-click="headlights()">Unlock Car</a>
+        <button ng-click="closeInfo()">close</button>
+      </div>
+      <!--<button ng-click="goToLogin()" class="button button-block button-positive button-large">Reserve Spot</button>-->
+    </div>
+  </div>
+</div>

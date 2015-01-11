@@ -1,0 +1,15 @@
+<ion-view scroll="false" title="Mapview">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <span><map style="height: 50%;" on-create="mapCreated(map)"></map></span>
+  <br>
+  <div ng-model="current">Time Remaining: {{current.time}}</div>
+  <div ng-model="battery">Battery Remaining (KM): {{battery.remainingRangeKm}}</div>
+  <br>
+  <button style="width: 50%;" class="button button-positive" ng-click="headlights()" >Lock</button><button style="width: 49%; margin-left: 2px;" class="button button-positive" >UnLock</button><br><br>
+  <button style="width: 50%;" class="button button-positive" ng-click="honkHorn()">Start Car</button><button style="width: 49%; margin-left:2px;" class="button button-positive" ng-click="honkHorn()" >Stop Car</button>
+  <button style="width: 100%" class="button button-royal button-block">Add Time</button>
+</ion-view>
+
+

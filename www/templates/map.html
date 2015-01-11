@@ -1,0 +1,15 @@
+<ion-view scroll="false" title="MapView">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <map on-create="mapCreated(map)"></map>
+</ion-view>
+<ion-footer-bar>
+
+  <!--
+  <input ng-model="vehicleData.vin">
+  -->
+  <button class="button-block button-positive" ng-click="findVehicles()">Find Active Vehicles</button>
+  <button class="button-block button-positive" ng-click="centerOnMe()">Show Rent Zone</button>
+
+</ion-footer-bar>
