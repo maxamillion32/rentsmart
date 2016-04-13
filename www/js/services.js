@@ -1,18 +1,18 @@
-angular.module('mapnet.services', []).value('SOCKET_URL','http://api.hackthedrive.com')
+angular.module('mapnet.services', []).value('SOCKET_URL','http://gokyr.com/wp-json/wp/v2/')
 
   .factory('RestServe', ['$http', 'SOCKET_URL', function($http, SOCKET_URL) {
     return{
 
-      vehicles: function() {
-        return $http.get(SOCKET_URL + '/vehicles/', {
+      cars: function() {
+        return $http.get(SOCKET_URL + '/cars/', {
           headers: {
             'Content-Type' : 'application/json'
           }
         });
       },
 
-      getVehicle: function(id) {
-        return $http.get(SOCKET_URL + '/vehicles/' + id, {
+      getCar: function(id) {
+        return $http.get(SOCKET_URL + '/cars/' + id, {
           headers: {
             'Content-Type': 'application/json'
           }
@@ -20,7 +20,7 @@ angular.module('mapnet.services', []).value('SOCKET_URL','http://api.hackthedriv
       },
 
       getFuel: function(id) {
-        return $http.get(SOCKET_URL + '/vehicles/' + id + '/fuel', {
+        return $http.get(SOCKET_URL + '/cars/' + id + '/fuel', {
           headers: {
             'Content-Type' : 'application/json'
           }
@@ -28,7 +28,7 @@ angular.module('mapnet.services', []).value('SOCKET_URL','http://api.hackthedriv
       },
 
       getDoor: function(id) {
-        return $http.get(SOCKET_URL + '/vehicles/' + id + '/door', {
+        return $http.get(SOCKET_URL + '/cars/' + id + '/door', {
           headers: {
             'Content-Type':'application/json'
           }
@@ -36,7 +36,7 @@ angular.module('mapnet.services', []).value('SOCKET_URL','http://api.hackthedriv
       },
 
       getBattery: function(id) {
-        return $http.get(SOCKET_URL + '/vehicles/' + id + '/battery', {
+        return $http.get(SOCKET_URL + '/cars/' + id + '/battery', {
           headers: {
             'Content-Type': 'application/json'
           }
@@ -44,7 +44,7 @@ angular.module('mapnet.services', []).value('SOCKET_URL','http://api.hackthedriv
       },
 
       getTrunk: function(id) {
-        return $http.get(SOCKET_URL + '/vehicles/' + id + '/trunk', {
+        return $http.get(SOCKET_URL + '/cars/' + id + '/trunk', {
           headers: {
             'Content-Type': 'application/json'
           }
@@ -52,7 +52,7 @@ angular.module('mapnet.services', []).value('SOCKET_URL','http://api.hackthedriv
       },
 
       getOdometer: function(id) {
-        return $http.get(SOCKET_URL + '/vehicles/' + id + '/odometer', {
+        return $http.get(SOCKET_URL + '/cars/' + id + '/odometer', {
           headers: {
             'Content-Type': 'application/json'
           }
@@ -60,7 +60,7 @@ angular.module('mapnet.services', []).value('SOCKET_URL','http://api.hackthedriv
       },
 
       getLocation: function(id) {
-        return $http.get(SOCKET_URL + '/vehicles/' + id + '/location/', {
+        return $http.get(SOCKET_URL + '/cars/' + id + '/location/', {
           headers: {
             'Content-Type': 'application/json'
           }
@@ -68,7 +68,7 @@ angular.module('mapnet.services', []).value('SOCKET_URL','http://api.hackthedriv
       },
 
       getLastTrip: function(id) {
-        return $http.get(SOCKET_URL + '/vehicles/' + id + '/battery', {
+        return $http.get(SOCKET_URL + '/cars/' + id + '/battery', {
           headers: {
             'Content-Type': 'application/json'
           }
@@ -76,7 +76,7 @@ angular.module('mapnet.services', []).value('SOCKET_URL','http://api.hackthedriv
       },
 
       sendAddress: function(vin, addrObj) {
-        return $http.post(SOCKET_URL + '/vehicles/' + vin + '/navigation/', addrObj, {
+        return $http.post(SOCKET_URL + '/cars/' + vin + '/navigation/', addrObj, {
           headers: {
             'Content-Type': 'application/json'
           }
@@ -84,11 +84,11 @@ angular.module('mapnet.services', []).value('SOCKET_URL','http://api.hackthedriv
       },
 
       turnOnHeadlights: function(id) {
-        return $http.post(SOCKET_URL + '/vehicles/' + id + '/lights/');
+        return $http.post(SOCKET_URL + '/cars/' + id + '/lights/');
       },
 
       lockCar: function(id) {
-        return $http.post(SOCKET_URL + '/vehicles/' + id + '/lock/', {"key":"bryan2015"}, {
+        return $http.post(SOCKET_URL + '/cars/' + id + '/lock/', {"key":"bryan2015"}, {
           headers: {
             'content-type':'application/json'
           }
@@ -98,7 +98,7 @@ angular.module('mapnet.services', []).value('SOCKET_URL','http://api.hackthedriv
       honkHorn: function(id) {
         return $http({
           method: 'POST',
-          url: SOCKET_URL + '/vehicles/' + id + '/horn/',
+          url: SOCKET_URL + '/cars/' + id + '/horn/',
           data: {"key": "bryan2015", "count":2},
           headers: {'Content-Type': 'application/x-www-form-urlencoded'},
           transformRequest: function(obj) {
